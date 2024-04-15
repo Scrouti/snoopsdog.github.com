@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnoopsDog</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar:wght@400&amp;display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+</head>
+<script>
+    function rotateOnClick(element) {
+        element.classList.toggle('rotate'); // Ajoute ou supprime la classe "rotate" lorsqu'on clique sur l'image
+        // Changer l'image à mi-chemin de l'animation
+        setTimeout(function() {
+            if (element.src.includes('cc.png')) {
+                element.src = 'snn.png'; // Changer l'image à mi-chemin
+            } else {
+                element.src = 'cc.png'; // Revenir à l'image d'origine à la fin de l'animation
+            }
+        }, 5000); // Temps en millisecondes pour la transition de l'image
+    }
+</script>
+
+<script>
+    function changeImageAndBackground(element) {
+        element.classList.toggle('rotate'); // Ajoute ou supprime la classe "rotate" lorsqu'on clique sur l'image
+        
+        var body = document.body; // Sélectionner le body
+        
+        if (element.src.includes('cc.png')) {
+            element.src = 'ce.png'; // Changer l'image à mi-chemin
+            body.style.backgroundImage = 'url("bg.png")'; // Changer l'image de fond du body
+        } else {
+            element.src = 'cc.png'; // Revenir à l'image d'origine à la fin de l'animation
+            body.style.backgroundImage = 'url("rgb(225, 255, 216)")'; // Changer l'image de fond du body
+        }
+
+        setTimeout(function() {
+            element.classList.toggle('rotate'); // Retire la classe "rotate" après le changement d'image
+        }, 5000); // Temps en millisecondes pour la transition de l'image
+    }
+</script>
+
+<body>
+    <header>
+        
+        <div class="logo">
+            <div class="logo-container">
+                <img class="kiki" src="cc.png" alt="Snoops Dog" onclick="changeImageAndBackground(this)">
+            </div>
+            
+        </div>
+        <h1>Snoops Dog</h1>
+        
+    </header>
+    <main>
+        <section class="main-section">
+          
+            <div class="content">
+                <h2>Rolling in the <span>green</span></h2>
+
+                <p class="cool">Float in the flow of $snoopsdog, the greenest gain in the game. Spark up your stash, and let's get those good times rolling!</p>
+                <p class="small-text">Contract:</p>
+                <div class="buttons">
+                    <button class="learn-more-button twitter">TWITTER</button>
+                    <button class="invest-now-button telegram">TELEGRAM</button>
+                </div>
+                <img class="new" src="cc.png" alt="Crypto Coin Image" onclick="rotateOnClick(this)">
+                
+            </div>
+            <div class="additional-images">
+                <img src="1.png" alt="image">
+                <img src="2.png" alt="image">
+            </div>
+        </section>
+    </main>
+</body>
+</html>
